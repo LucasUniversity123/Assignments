@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pizza Ordering Form</title>
+</head>
+<body>
+    <h1>Pizza Ordering Form</h1>
+    <form action="#" method="post">
+        <h2>Contact Information</h2>
+        
+        <label for="inName">Name:</label>
+        <input type="text" name="inName" id="inName" required>
+        <br><br>  
+
+        <label for="label_name">Phone:</label>
+        <input type="tel" name="label_name" id="label_name" pattern="[0-9]{3}[0-9]{3}[0-9]{4}" required>
+        <br><br> 
+
+        <label for="label_email">Email:</label>
+        <input type="email" name="label_email" id="label_email" required>
+        <br><br> 
+        
+        <h2>Select Pizza Size</h2>
+
+        <label for="size">Size:</label>
+        <select name="size" id="size">
+            <option value="" disabled selected hidden>Select a Size</option>
+            <option>Medium</option>
+            <option>Large</option>
+            <option>Extra Large</option>
+        </select>
+
+        <h2>Select Pizza Sauce</h2>
+
+        <input type="radio" name="sauce"><label>Marinara</label><br>
+        <input type="radio" name="sauce"><label>Ranch</label><br>
+        <input type="radio" name="sauce"><label>No Sauce</label><br>
+
+        <h2>Select Toppings</h2>
+
+        <input type="checkbox" name="toppings"><label>Pepperoni</label><br>
+        <input type="checkbox" name="toppings"><label>Sausage</label><br>
+        <input type="checkbox" name="toppings"><label>Mushroom</label><br>
+        <input type="checkbox" name="toppings"><label>Beef</label><br>
+        <input type="checkbox" name="toppings"><label>Avocado (+1.95)</label><br>
+        <input type="checkbox" name="toppings"><label>Extra Cheese</label><br>
+
+        <h2>Additional Instructions</h2>
+        <textarea name="instructions" placeholder="Add Instructions"></textarea>
+        <br><br>
+
+        <input type="submit" value="submit">
+    </form>
+    <br><br>
+
+    <h2>My Favorite Games</h2>
+    <table border="1">
+    <tr>
+        <th>Developer</th>
+        <th>Title</th>
+        <th>Year</th>
+    </tr>
+    <tr>
+        <td>ConcernedApe</td>
+        <td>Stardew Valley</td>
+        <td>2016</td>
+    </tr>
+    <tr>
+        <td>Mojang</td>
+        <td>Minecraft</td>
+        <td>2011</td>
+    </tr>
+    <tr>
+        <td rowspan="2">Mossmouth</td>
+        <td>Spelunky 2</td>
+        <td>2020</td>
+    </tr>
+    <tr>
+        <td>UFO 50</td>
+        <td>2024</td>
+    </tr>
+
+    <tr>
+        <td colspan="3">Count: 4</td>
+    </tr>
+
+    </table>
+
+</body>
+</html>
+
