@@ -40,14 +40,21 @@ h1{
     color : red
 }
 
-li{
-    marker: "0";
+
+
+ol li {
+    list-style: none;
+    counter-increment: item;
+}
+
+ol li::before {
+    content: counter(item, decimal-leading-zero) ". ";
 }
 
 
 table, th, td {
     border: 1px solid black;
-    border-collapse: collapse; /* removes double borders */
+    border-collapse: collapse;
 }
 
 table
