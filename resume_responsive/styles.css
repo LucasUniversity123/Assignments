@@ -1,0 +1,156 @@
+
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+
+    color: white;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 100;
+}
+
+body {
+    min-height: 100vh;
+    background: linear-gradient(135deg,rgb(44, 174, 217),rgb(33, 138, 173), rgb(0, 38, 90),rgb(7, 1, 21));
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover; 
+}
+
+a{
+    color: white;
+}
+
+h1, h2, h3{
+    font-weight: 200;
+    text-align: center;
+    font-size: 3rem;
+}
+
+h2{
+    margin-bottom: 0;
+}
+
+.name_container
+{
+    flex: 1;
+    height: calc(100vh - 64px);
+    margin: 32px;
+}
+
+.name {
+    
+    position: fixed;
+    top: 32px;        
+    left: 32px;      
+    bottom: 32px;       
+    width: calc(33vw - 32px);      
+
+    padding: 16px 16px 32px 16px;
+
+    display: flex;
+    justify-content: center;
+    flex-direction: column; 
+    align-items: center;
+
+    border-radius: 32px;
+    background-color: rgba(0, 0, 0, 0.578);
+    box-shadow: 0 16px 16px rgba(0, 0, 0, 0.3);
+
+    text-align: center;
+}
+
+.name h1 {
+    font-size: 3rem;
+    width: 100%;
+    padding: 32px;
+}
+
+.section{
+    
+    background-color: rgba(0, 0, 0, 0.578);
+    border-radius: 32px;
+
+    box-shadow: 0 16px 16px rgba(0, 0, 0, 0.3);
+
+    margin: 32px;
+
+    padding: 0 32px 32px 32px;
+}
+
+
+.container
+{
+    display: flex;
+}
+
+.content{
+    flex: 2;
+}
+
+.grid {
+    margin-top: 32px;
+    display: flex;
+    flex-wrap: wrap;
+
+    gap: 32px;
+    justify-content:  center;
+    justify-self: center;
+}
+
+.grid .section {
+    min-width: 300px;
+    margin: 0;
+    padding: 16px;
+    display: flex;
+    flex: 1;
+
+    padding-top: 0;
+    display: table;
+}
+
+.grid  .section h2{
+    margin: 4px 0;
+    font-size: 2em;
+}
+
+.grid .section img {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    border-radius: 16px;
+    border-color: white;
+    border: 2px solid;
+}
+
+
+
+
+@media screen and (max-width: 412px){
+    .container
+    {
+        display:contents;
+    }
+
+        .name_container {
+        flex: unset;
+        height: auto;
+    }
+
+    .name {
+        position: relative; 
+        width: calc(100% - 32px);  
+        height: auto;
+        top: auto;
+        left: auto;
+        bottom: auto;
+        border-radius: 32px;
+    }
+
+    .grid .section {
+    min-width: 128px;
+}
+
+
+}
+
