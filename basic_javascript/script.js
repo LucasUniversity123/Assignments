@@ -10,7 +10,8 @@ function tickUp()
 function tickDown() 
 {
     let counterSpan = document.getElementById("counter");
-    counterSpan.innerText = value - 1;
+    value -= 1;
+    counterSpan.innerText = value;
 }
 
 
@@ -47,10 +48,57 @@ function addMultiplesToArray()
     let array = [];
     for (let i = value; i >= 0; i--) 
     {
-        if (i % 5 == 0)
+        if (i % 5 == 0 && i != 0)
         {
             array.push(i)
         }
     }
     console.log(array);
+}
+
+
+function printCarObject()
+{
+    let type = document.getElementById("carType").value;
+    let mpg = document.getElementById("carMPG").value;
+    let color = document.getElementById("carColor").value;  
+
+    const car = new Car(type, mpg, color)
+
+
+
+    console.log(car);
+}
+
+class Car{
+
+    constructor (type, mpg, color)
+    {
+        this.cType = type;
+        this.cMPG = mpg;
+        this.cColor = color;    
+    }
+
+}
+
+
+function loadCar(carNumber)
+{
+    const cars = [carObject1, carObject2, carObject3];
+    const car = cars[carNumber - 1];
+
+    document.getElementById("carType").value = car.cType;
+    document.getElementById("carMPG").value = car.cMPG;
+    document.getElementById("carColor").value = car.cColor;
+}
+
+function changeColor(carNumber)
+{
+    const cars = [carObject1, carObject2, carObject3];
+    const car = cars[carNumber - 1];
+
+
+    document.getElementById("styleParagraph").style.color = car.cColor;
+
+
 }
