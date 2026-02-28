@@ -139,45 +139,39 @@ const teamContainer = document.querySelector("#members");
 function addPokemonToTeam(pokemonData, gradient) {
     const membersContainer = document.getElementById("members");
 
-    // team member
     const member = document.createElement("div");
     member.className = "team-member";
-    // set background gradient
     member.style.background = `linear-gradient(-25deg, ${gradient.top}, ${gradient.bottom})`;
-    // set font & contrast colors as CSS variables
     member.style.setProperty("--font-color", gradient.font);
     member.style.setProperty("--contrast-color", gradient.contrast);
 
-    // container
     const imgContainer = document.createElement("div");
-    imgContainer.className = "display-container"; //class
+    imgContainer.className = "display-container";
 
     const circle = document.createElement("img");
     circle.className = "circle";
     circle.src = "img/circle.svg";
 
-    // sprite
     const spriteImg = document.createElement("img");
     spriteImg.className = "sprite";
     spriteImg.src = pokemonData.sprites.front_default;
 
-    // decoration
     imgContainer.appendChild(circle);
     imgContainer.appendChild(spriteImg);
 
-    // moves
     const ul = document.createElement("ul");
-    const moves = pokemonData.moves.slice(0, 4);
-    moves.forEach(m => {
+
+    const selects = move_container.querySelectorAll(".move-select");
+    selects.forEach(select => {
         const li = document.createElement("li");
-        li.textContent = m.move.name.replace(/-/g, " ").replace(/\b\w/g, c => c.toUpperCase());
+        li.textContent = select.value
+            .replace(/-/g, " ")
+            .replace(/\b\w/g, c => c.toUpperCase());
         ul.appendChild(li);
     });
 
     member.appendChild(imgContainer);
     member.appendChild(ul);
 
-    // append to team
     membersContainer.appendChild(member);
-        audio.play()
 }
