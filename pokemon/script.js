@@ -12,6 +12,8 @@ searchInput.addEventListener("keydown", function (event) {
 });
 
 const pname = document.getElementById("pokemon-name");
+const audio = document.getElementById("pokemon-sound");
+
 
 //color map
 const colorGradients = {
@@ -32,7 +34,7 @@ const speciesCache = new Map();
 
 load_pokemon("6")
 
-// Global variables to store current pokemon data & gradient
+// gradeint
 let currentPokemonData = null;
 let currentGradient = colorGradients.green;
 
@@ -62,7 +64,7 @@ function displayPokemon(data) {
     const imageUrl = data.sprites.front_default;
     sprite.src = imageUrl;
 
-    //name
+    // name
     let num = "No. " + data.id + " - "
     pname.textContent = num +  data.name.charAt(0).toUpperCase() + data.name.slice(1).toLowerCase();
 
@@ -78,13 +80,19 @@ function displayPokemon(data) {
             option.textContent = moveName.replace(/-/g, " ").replace(/\b\w/g, c => c.toUpperCase());
             select.appendChild(option);
 
-            //random move
+            // random move
             if (moves.length > 0) {
                 const randomIndex = Math.floor(Math.random() * moves.length);
                 select.selectedIndex = randomIndex;
             } 
         });
     });
+
+    // load sound
+    const cryUrl = data.cries["latest"];
+    audio.src = cryUrl;
+    audio.load(); // ready to play
+    audio.play()
 
     if (speciesCache.has(data.species.url)) {
         const speciesData = speciesCache.get(data.species.url);
@@ -171,4 +179,5 @@ function addPokemonToTeam(pokemonData, gradient) {
 
     // append to team
     membersContainer.appendChild(member);
+        audio.play()
 }

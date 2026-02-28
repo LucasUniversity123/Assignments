@@ -279,6 +279,19 @@ h1{
 
 }
 
+audio{
+    background-color: var(--contrast-color);
+
+    border: 1px;
+    border-radius: 8px;
+
+    text-align: center;
+    font-weight: 300;
+    margin: 16px 0 0 0 ;
+    filter: drop-shadow(4px 4px 4px rgba(0, 0, 0, 0.5));
+
+}
+
 .display-container {
     position: relative;
     width: 90%;
@@ -678,5 +691,4 @@ h1{
     box-sizing: border-box;
     width: 100%; 
 }
-
 
